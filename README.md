@@ -1,34 +1,19 @@
-# Projeto \<nome\>
+# Projeto Commando Raid
 ### FPRO/MIEIC, 2019/20
-### \<Fulano de Tal (up2019xxxxx@fe.up.pt)\>
-### \<1MIEIC0X\> 
+### Mário Ferreira (up201907727@fe.up.pt)
+### 1MIEIC04
 
 #### Objetivo
 
-1. \<Criar um clone do clássico Sokoban em Pygame\>
-
-2. \<Em alternativa... do clássico x em Pygame\>
-
-#### Repositório de código
-
-1) Link para o repositório do GitHub: <https://github.com/fpro-feup/public>
-
-2) Adicionar o prof. da Unidade (ver lista em baixo) e o "Lord of the Game" (aka Ricardo Cruz):
-
-- https://github.com/fernandocassola
-- https://github.com/rpmcruz
-- https://github.com/jlopes60
-- https://github.com/rcamacho
+Criar um clone do clássico Command Raid em Pygame.
 
 #### Descrição
 
-\<É um jogo de puzzle em que o objetivo do jogo é empurrar caixotes para um sítio indicado. 
-Para empurrar o caixote é preciso ir ao outro lado empurrá-lo. 
-Ou seja, se ele ficar junto à parede, a pessoa precisa de reiniciar o jogo. Estamos a utilizar os níveis do XSokoban.\>
+É um jogo de ação em que o objetivo do jogo é disparar um canhão para destruir helicópteros e aviões antes que estes deixem cair bombas ou soldados que também podem ser destruidos e que danificam o canhão.
 
 #### UI
 
-![UI](https://github.com/fpro-feup/public/blob/master/assigns/ui.png)
+![UI](ui.jpg)
 
 ### Pacotes
 
@@ -63,34 +48,4 @@ Ou seja, se ele ficar junto à parede, a pessoa precisa de reiniciar o jogo. Est
    1. paraquedista, reduz estado em 1
 1. **TUNEL**, **PONTOS**, **MENU**
 
-### \<date\>
-
----------
-
-# COPIA
-
-#Projeto Commando Raid
-
-FPRO/MIEIC, 2019/20
-
-Mário Ferreira (up201907727@fe.up.pt)
-<1MIEIC04>
-
-Objetivo
-Criar um clone do clássico Command Raid em Pygame.
-
-Repositório de código
-Link para o repositório do GitHub: https://github.com/mpspmf/atari2600_commando_raid
-
-Descrição
-É um jogo de ação em que o objetivo do jogo é disparar um canhão para destruir helicópteros e aviões antes que estes deixem cair bombas ou soldados que também podem ser destruidos e que danificam o canhão.
-
-
-Pacotes
-Pygame
-
-Tarefas
-ler teclas
-verificar se jogador chegou ao fim do nível
-
-19/11/2019
+### 19/11/2019
