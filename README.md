@@ -22,8 +22,8 @@ Criar um clone do clássico Command Raid em Pygame.
 #### Tarefas
 
 1. ~**BACKGROUND**~
-   1. montanhas: duas elipses
-   1. céu: ciclo
+   1. ~montanhas: duas elipses~
+   1. ~céu: ciclo~
 1. **JOGADOR**
    1. desenhar naquela posição
    1. variar o ângulo: angle
