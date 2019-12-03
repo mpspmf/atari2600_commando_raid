@@ -1,0 +1,111 @@
+import pygame
+import math
+
+#colours
+GREY = (82, 82, 82)
+BROWN = (81, 52, 10)
+LIGHT_BLUE = (104, 136, 204)
+DARK_BLUE = (89, 97, 219)
+PURPLE = (131, 96, 217)
+RED = (220, 86, 95) 
+DARK_ORANGE = (204, 154, 71)
+LIGHT_ORANGE = (224, 176, 90)
+BROWN = (81, 52, 10)
+
+#MESURES
+SCREEN_WIDTH = 800
+SCREEN_HEIGHT = 600
+MOUNT_WIDTH = 550
+VALLEY_WIDTH = 40
+
+
+pygame.init()
+screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+clock = pygame.time.Clock()
+running = True
+
+#canhão
+pos_inicial = (400, 470)
+angle = -90
+tiros = []
+n = 0
+
+while running == True:
+    dt = clock.tick(240)
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_ESCAPE:
+                running = False
+    #céu
+    pygame.draw.rect(screen, LIGHT_BLUE, (0, 0, 800, 155))
+    pygame.draw.rect(screen, DARK_BLUE, (0, 155, 800, 100))
+    pygame.draw.rect(screen, PURPLE, (0, 255, 800, 85))
+    pygame.draw.rect(screen, RED, (0, 340, 800, 100))
+    pygame.draw.rect(screen, DARK_ORANGE, (0, 400, 800, 300))
+    pygame.draw.rect(screen, LIGHT_ORANGE, (0, 450, 800, 500))
+
+
+    #canhão
+    pygame.draw.circle(screen, GREY, (SCREEN_WIDTH//2, 490), 20)
+    pygame.draw.circle(screen, (224, 176, 90), (SCREEN_WIDTH//2, 492), 5)
+    
+    #montanhas
+    screen.set_clip(0, 455, SCREEN_WIDTH, 600-455)
+    pygame.draw.ellipse(screen, BROWN, (SCREEN_WIDTH//2+VALLEY_WIDTH-MOUNT_WIDTH, 450, MOUNT_WIDTH, 200))
+    pygame.draw.ellipse(screen, BROWN, (SCREEN_WIDTH//2-VALLEY_WIDTH, 450, MOUNT_WIDTH, 200))
+    pygame.draw.rect(screen, BROWN, (0, SCREEN_HEIGHT-50, SCREEN_WIDTH, 50))
+    screen.set_clip(None)
+     
+    
+    #mover o canhão
+    
+    keys = pygame.key.get_pressed()
+    
+    if keys[pygame.K_LEFT] and angle >= -150:
+        angle += -0.3 * dt
+    if keys[pygame.K_RIGHT] and angle <= -30:
+        angle += 0.3 * dt
+    
+    pos_final = (400 + 20 * math.cos(angle * math.pi/180),470 + 20 * math.sin(angle * math.pi/180))
+    pygame.draw.line(screen, GREY, pos_inicial, pos_final, 5)
+    
+    #tiros
+    
+    
+    for event in pygame.event.get() :
+        n = 0
+        if event.type == pygame.KEYDOWN :
+            if event.key == pygame.K_SPACE :
+                n = 1
+        elif event.type == pygame.KEYUP :
+            if event.key == pygame.K_SPACE :
+                n = 2
+                
+    if n == 2:
+        tiros.append([list(pos_final), angle])
+    
+    
+    '''
+    if keys[pygame.K_SPACE]:
+        tiros.append([list(pos_final), angle])
+     '''      
+            
+    for i in tiros:
+        if 0 < i[0][0] < 800 and 0 < i[0][1] < 600:
+            i[0] = [i[0][0]+math.cos(i[1] * math.pi/180), i[0][1]+math.sin(i[1] * math.pi/180)]
+            
+            pos_final_tiro = (i[0][0] + 20 * math.cos(i[1] * math.pi/180),i[0][1]+ 20 * math.sin(i[1] * math.pi/180))
+            pygame.draw.line(screen, GREY, (i[0][0], i[0][1]), pos_final_tiro, 5)
+        else:
+            tiros.remove(i)
+        
+    
+           
+            
+    
+    
+    pygame.display.flip()
+
+pygame.quit()
