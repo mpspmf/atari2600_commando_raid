@@ -33,19 +33,19 @@ Criar um clone do clássico Command Raid em Pygame.
       * quando carregas no space, acrescentas tuplo
       * desenhar os tiros na posição (x,y) com o angulo dado
    1. atualizar posição do tiro na lista
-1. **INIMIGOS NAVES**
+1. ~**INIMIGOS NAVES**~
    ~1. de vez em quando, aparece uma nave: lista (pos_x, pos_y, orientacao)~
    ~1. atualizar posição da nave~
    1. colisão tiro/nave
-1. **INIMIGOS PARAQUEDISTAS**
-   ~1. nave aleatoriamente cria paraquedista em certos X: lista (pos_x, pos_y)~
-   ~1. atualizar posiçáo paraquedista~
-   ~1. desaparece quando ao solo~
-1. **CASAS**
-   ~1. Quatro cidades: (pos_x, estado)~
-      * estado inicialmente = 5
-   ~1. desenhar cidade conforme estado~
+1. ~**INIMIGOS PARAQUEDISTAS**~
+   1. nave aleatoriamente cria paraquedista em certos X: lista (pos_x, pos_y)
+   1. atualizar posiçáo paraquedista
+   1. desaparece quando ao solo
+1. ~**CASAS**~
+   1. Quatro cidades: (estado, pos_x)
+      * estado inicialmente = 3
+   1. desenhar cidade conforme estado
    1. paraquedista, reduz estado em 1
-1. **TUNEL**, **PONTOS**, **MENU**
+1. ~**TUNEL**, **PONTOS**, **MENU**~
 
 ### 19/11/2019
